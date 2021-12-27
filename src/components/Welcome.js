@@ -1,5 +1,5 @@
 import "../style/welcome.css";
-import { welcomeDatas } from "../datas/welcomeDatas";
+import { welcomeDatas } from "../datas/datas";
 
 const Welcome = () => {
   return (
