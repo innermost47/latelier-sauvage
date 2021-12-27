@@ -1,0 +1,16 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Alice" !important;
+}
+
+body {
+  font-family: "Playfair Display" !important;
+}
+
+.btn-green {
+  background-color: #96a24e !important;
+}
