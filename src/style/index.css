@@ -14,3 +14,9 @@ body {
 .btn-green {
   background-color: #96a24e !important;
 }
+
+.sectionTitle {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 36px;
+}

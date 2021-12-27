@@ -1,8 +1,12 @@
 .logo {
-    width: 100px;
-    margin-right: 10px;
+  width: 100px;
+  margin-right: 10px;
 }
 
 .navbar-dark {
-    background-color: black !important;
+  background-color: black !important;
+}
+
+.nav-link {
+  color: #fff !important;
 }
