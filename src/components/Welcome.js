@@ -1,20 +1,28 @@
+import { useEffect, useState } from "react";
 import "../style/welcome.css";
-import { welcomeDatas } from "../datas/datas";
+import axios from "axios";
 
 const Welcome = () => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    axios.get("http://localhost:8000/welcome").then((res) => setData(res.data));
+  }, []);
+
   return (
     <section id="welcome">
       <div className="container">
         <div className="row">
           <h2 className="sectionTitle">VOUS SOUHAITEZ</h2>
-          {welcomeDatas.map((data, key) => {
-            return (
-              <div key={key} className="col-md-4">
-                <img src={data.image} alt="image" className="icon" />
-                <p>{data.content}</p>
-              </div>
-            );
-          })}
+          {data.map((content) => (
+            <div key={content.id} className="col-md-4">
+              <img
+                src={"http://localhost:8000/img/" + content.image}
+                alt={content.image}
+                className="icon"
+              />
+              <p>{content.content}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
