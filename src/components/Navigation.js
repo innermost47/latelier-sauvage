@@ -2,15 +2,25 @@ import { Link } from "react-router-dom";
 import "../style/navigation.css";
 
 const Navigation = () => {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
   return (
     <div className="navigation">
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <Link to="/">
-            <img src="img/logo.png" alt="Logo" className="logo" />
+            <div className="logoContainer">
+              <img src="img/logo.png" alt="Logo" className="logo" />
+            </div>
           </Link>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler navbarSpan"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -18,34 +28,66 @@ const Navigation = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to="/#welcome" className="nav-link">
+                <a
+                  href="#welcome"
+                  className="nav-link"
+                  data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse"
+                  aria-current="page"
+                >
                   Accueil
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link to="/#activities" className="nav-link">
+                <a
+                  href="#activities"
+                  className="nav-link"
+                  data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse"
+                  aria-current="page"
+                >
                   Activités
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link to="/#events" className="nav-link">
+                <a
+                  href="#events"
+                  className="nav-link"
+                  data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse"
+                  aria-current="page"
+                >
                   Évènements
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link to="/#whoami" className="nav-link">
+                <a
+                  href="#whoami"
+                  className="nav-link"
+                  data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse"
+                  aria-current="page"
+                >
                   Qui suis-je
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link to="/#contact" className="nav-link">
+                <a
+                  href="#contact"
+                  className="nav-link"
+                  data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse"
+                  aria-current="page"
+                >
                   Contact
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
