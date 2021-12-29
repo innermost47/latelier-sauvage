@@ -3,6 +3,7 @@ import Events from "../components/Events";
 import Header from "../components/Header";
 import Navigation from "../components/Navigation";
 import Welcome from "../components/Welcome";
+import Whoami from "../components/Whoami";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Welcome />
       <Activites />
       <Events />
+      <Whoami />
     </div>
   );
 };
