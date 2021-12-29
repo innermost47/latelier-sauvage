@@ -13,7 +13,7 @@ const Whoami = () => {
         <div className="row">
           <h2 className="sectionTitle text-center">QUI SUIS-JE ?</h2>
           {data.map((content, key) => (
-            <div className="row">
+            <div className="row" key={key}>
               <div className="col-md-6">
                 <div className="imageContainerWhoAmI">
                   <img

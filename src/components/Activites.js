@@ -13,7 +13,7 @@ const Activites = () => {
     <section id="activities">
       <div className="container">
         <div className="row">
-          <h2 className="sectionTitle activitiesTitle">LES ACTIVITÉS</h2>
+          <h2 className="sectionTitle greenTitle">LES ACTIVITÉS</h2>
           {data.map((content) => (
             <div key={content.id} className="col-md-4">
               <div className="imageContainer">

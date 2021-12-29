@@ -1,0 +1,15 @@
+#contact {
+  color: #fff;
+  background-color: #101010;
+}
+
+@media screen and (min-width: 768px) {
+  .contactForm {
+    width: 75%;
+    margin: auto;
+  }
+}
+
+textarea {
+  height: 250px;
+}

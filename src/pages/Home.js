@@ -1,4 +1,5 @@
 import Activites from "../components/Activites";
+import Contact from "../components/Contact";
 import Events from "../components/Events";
 import Header from "../components/Header";
 import Navigation from "../components/Navigation";
@@ -14,6 +15,8 @@ const Home = () => {
       <Activites />
       <Events />
       <Whoami />
+      <section id="break"></section>
+      <Contact />
     </div>
   );
 };
