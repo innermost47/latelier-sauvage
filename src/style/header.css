@@ -1,7 +1,7 @@
 .header {
   background: url("/public/img/background.jpg") no-repeat center;
   background-size: cover;
-  min-height: calc(100vh - 72px);
+  min-height: calc(100vh - 59px);
   text-align: center;
   display: flex;
   flex-direction: column;

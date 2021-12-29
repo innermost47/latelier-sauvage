@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { url } from "../js/Constantes";
 import "../style/welcome.css";
 
 const Welcome = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8000/welcome").then((res) => setData(res.data));
+    axios.get(url + "welcome").then((res) => setData(res.data));
   }, []);
 
   return (
@@ -16,7 +17,7 @@ const Welcome = () => {
           {data.map((content) => (
             <div key={content.id} className="col-md-4">
               <img
-                src={"http://localhost:8000/img/" + content.image}
+                src={url + "img/" + content.image}
                 alt={content.image}
                 className="icon"
               />

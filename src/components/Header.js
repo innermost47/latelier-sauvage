@@ -2,6 +2,14 @@ import "../style/header.css";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
   return (
     <div className="header">
       <div className="headerBox">
@@ -11,15 +19,15 @@ const Header = () => {
           vie en pleine Nature...
         </p>
         <div>
-          <Link to="/#activities" className="btn btn-green text-light">
+          <a href="#activities" className="btn btn-green text-light">
             Découvrir
-          </Link>
+          </a>
         </div>
       </div>
       <div>
-        <Link to="/#welcome">
+        <a href="#welcome">
           <img src="img/chevron.png" alt="chevron down" className="chevron" />
-        </Link>
+        </a>
       </div>
     </div>
   );

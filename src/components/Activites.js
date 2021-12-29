@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "../style/activites.css";
+import { url } from "../js/Constantes";
 
 const Activites = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/activities")
-      .then((res) => setData(res.data));
+    axios.get(url + "activities").then((res) => setData(res.data));
   }, []);
   return (
     <section id="activities">
@@ -18,7 +17,7 @@ const Activites = () => {
             <div key={content.id} className="col-md-4">
               <div className="imageContainer">
                 <img
-                  src={"http://localhost:8000/img/" + content.image}
+                  src={url + "img/" + content.image}
                   alt={content.image}
                   className="imageActivites"
                 />

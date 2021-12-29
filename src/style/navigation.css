@@ -1,12 +1,5 @@
-.logoContainer {
-  width: 100px;
-  margin-right: 10px;
-}
-
 .logo {
-  width: 100%;
-  height: auto;
-  display: block;
+  margin-right: 10px;
 }
 
 .navbar-dark {

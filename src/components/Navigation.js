@@ -15,9 +15,7 @@ const Navigation = () => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <Link to="/">
-            <div className="logoContainer">
-              <img src="img/logo.png" alt="Logo" className="logo" />
-            </div>
+            <img src="img/logoNavbar.png" alt="Logo" className="logo" />
           </Link>
           <button
             className="navbar-toggler navbarSpan"

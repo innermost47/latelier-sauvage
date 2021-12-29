@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import dateFormat from "dateformat";
+import { url } from "../js/Constantes";
 import { Carousel } from "../js/Carousel";
 import "../style/events.css";
 
 const Events = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8000/events").then((res) => {
+    axios.get(url + "events").then((res) => {
       setData(res.data);
       new Carousel(document.querySelector("#carousel"), {
         slidesToScroll: 1,
@@ -31,10 +32,7 @@ const Events = () => {
             {data.map((content, index) => (
               <div key={index} className="carousel--block">
                 <div className="imageContainer">
-                  <img
-                    src={"http://localhost:8000/img/" + content.image}
-                    alt={content.image}
-                  />
+                  <img src={url + "img/" + content.image} alt={content.image} />
                 </div>
                 <div className="carousel--title">
                   <h4>{content.title}</h4>
