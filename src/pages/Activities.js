@@ -10,12 +10,8 @@ const Activities = () => {
   let id = useParams();
   id = id.activiteId;
   const [data, setData] = useState([]);
-  const [images, setImages] = useState([]);
   useEffect(() => {
     axios.get(`${url}activities/${id}`).then((res) => setData(res.data));
-    axios
-      .get(`${url}activities/images/${id}`)
-      .then((res) => setImages(res.data));
   }, []);
   return (
     <div>
@@ -32,18 +28,6 @@ const Activities = () => {
               <img src={url + "img/" + data.image} alt={data.image} />
             </div>
           </div>
-        </div>
-        <div className="row">
-          {images.map((content) => (
-            <div className="col-lg-4" key={content.id}>
-              <div className="imageContainerGallery mb-4">
-                <img src={`${url}/img/${content.title}`} alt={content.title} />
-                <div className="legend">
-                  <p>{content.legend}</p>
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
       <Footer />

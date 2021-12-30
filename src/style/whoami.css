@@ -1,6 +1,13 @@
 #whoami {
   background-color: #96a24e;
   color: #fff;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  #whoami {
+    text-align: left;
+  }
 }
 
 .imageContainerWhoAmI {
