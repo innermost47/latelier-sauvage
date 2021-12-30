@@ -12,6 +12,12 @@
 }
 
 .footerLogo {
-  width: 450px;
+  width: 150px;
   margin: auto;
+}
+
+@media screen and (min-width: 500px) {
+  .footerLogo {
+    width: 450px;
+  }
 }

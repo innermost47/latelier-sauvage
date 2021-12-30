@@ -164,3 +164,39 @@ section {
 .content {
   min-height: 100vh;
 }
+
+.imageContainerGallery {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.imageContainerGallery > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.legend {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #96a24e;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  padding: 20px;
+}
+
+.imageContainerGallery:hover .legend {
+  opacity: 1;
+}
