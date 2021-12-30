@@ -10,19 +10,35 @@ const Events = () => {
   useEffect(() => {
     axios.get(url + "events").then((res) => {
       setData(res.data);
+      let slidesVisible;
+      let navigation;
+      let viewPort = window.innerWidth;
+      if (res.data.length === 1) {
+        slidesVisible = 2;
+        navigation = false;
+      } else if (res.data.length === 2) {
+        slidesVisible = 2;
+        if (viewPort > 800) {
+          navigation = false;
+        } else {
+          navigation = true;
+        }
+      } else if (res.data.length > 2) {
+        slidesVisible = 3;
+        if (viewPort > 800) {
+          navigation = false;
+        } else {
+          navigation = true;
+        }
+      }
       new Carousel(document.querySelector("#carousel"), {
         slidesToScroll: 1,
-        slidesVisible: 3,
+        slidesVisible,
         loop: true,
+        navigation,
       });
     });
   }, []);
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
   return (
     <section id="events">
       <div className="container">
@@ -51,6 +67,14 @@ const Events = () => {
                   {dateFormat(content.endAt, "dd/mm/yy HH:MM")}
                 </div>
                 <div className="carousel--text">{content.description}</div>
+                <a
+                  href={content.link}
+                  className="btn btn-green text-light mt-4 left"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  S'inscrire
+                </a>
               </div>
             ))}
           </div>

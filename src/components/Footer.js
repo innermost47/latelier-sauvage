@@ -7,7 +7,11 @@ const Footer = () => {
         <div className="container">
           <div className="d-flex d-flew-row justify-content-between">
             <h5>Rejoignez moi sur Facebook</h5>
-            <a href="https://www.facebook.com/Latelier-Sauvage-1734883446746713">
+            <a
+              href="https://www.facebook.com/Latelier-Sauvage-1734883446746713"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src="img/facebook.png" alt="Join me on facebook" />
             </a>
           </div>
