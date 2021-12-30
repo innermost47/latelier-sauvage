@@ -1,21 +1,13 @@
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import "../style/navigation.css";
 
 const Navigation = () => {
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute("href")).scrollIntoView({
-        behavior: "smooth",
-      });
-    });
-  });
   return (
     <div className="navigation">
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <Link to="/">
-            <img src="img/logoNavbar.png" alt="Logo" className="logo" />
+            <img src="/img/logoNavbar.png" alt="Logo" className="logo" />
           </Link>
           <button
             className="navbar-toggler navbarSpan"
@@ -33,59 +25,29 @@ const Navigation = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a
-                  href="#welcome"
-                  className="nav-link"
-                  data-bs-toggle="collapse"
-                  data-bs-target=".navbar-collapse"
-                  aria-current="page"
-                >
+                <Link to="/#welcome" className="nav-link">
                   Accueil
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a
-                  href="#activities"
-                  className="nav-link"
-                  data-bs-toggle="collapse"
-                  data-bs-target=".navbar-collapse"
-                  aria-current="page"
-                >
-                  Activités
-                </a>
+                <Link to="/#activities" className="nav-link">
+                  Activites
+                </Link>
               </li>
               <li className="nav-item">
-                <a
-                  href="#events"
-                  className="nav-link"
-                  data-bs-toggle="collapse"
-                  data-bs-target=".navbar-collapse"
-                  aria-current="page"
-                >
+                <Link to="/#events" className="nav-link">
                   Évènements
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a
-                  href="#whoami"
-                  className="nav-link"
-                  data-bs-toggle="collapse"
-                  data-bs-target=".navbar-collapse"
-                  aria-current="page"
-                >
+                <Link to="/#whoami" className="nav-link">
                   Qui suis-je
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a
-                  href="#contact"
-                  className="nav-link"
-                  data-bs-toggle="collapse"
-                  data-bs-target=".navbar-collapse"
-                  aria-current="page"
-                >
+                <Link to="/#contact" className="nav-link">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

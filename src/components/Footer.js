@@ -12,13 +12,13 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img src="img/facebook.png" alt="Join me on facebook" />
+              <img src="/img/facebook.png" alt="Join me on facebook" />
             </a>
           </div>
         </div>
       </div>
       <div className="footerInfos">
-        <img src="img/logo.png" alt="The Logo" className="footerLogo" />
+        <img src="/img/logo.png" alt="The Logo" className="footerLogo" />
       </div>
     </footer>
   );
