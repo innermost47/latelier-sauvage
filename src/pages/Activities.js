@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { url } from "../js/Constantes";
-import NavigationToHome from "../components/NavigationToHome";
+import Navigation from "../components/Navigation";
 
 const Activities = () => {
   window.scrollTo(0, 0);
@@ -15,7 +15,7 @@ const Activities = () => {
   }, []);
   return (
     <div>
-      <NavigationToHome />
+      <Navigation />
       <div className="container content">
         <div className="row">
           <h2 className="sectionTitle text-center">{data.title}</h2>
