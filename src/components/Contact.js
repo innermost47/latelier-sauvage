@@ -4,6 +4,7 @@ import { url } from "../js/Constantes";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import React from "react";
+import { recaptchaKey } from "../js/Constantes";
 
 const Contact = () => {
   const recaptchaRef = React.useRef();
@@ -16,8 +17,15 @@ const Contact = () => {
   const onSubmit = (data) => {
     const recaptchaValue = recaptchaRef.current.getValue();
     data.recaptcha = recaptchaValue;
-    axios.post(url + "/email", data).then((response) => {
-      alert(response);
+    const formData = new FormData();
+    formData.append("name", data.name);
+    formData.append("email", data.email);
+    formData.append("message", data.message);
+    formData.append("recaptcha", data.recaptcha);
+    axios.post(url + "email", formData).then((response) => {
+      document.getElementById("contactForm").reset();
+      window.grecaptcha.reset();
+      alert(response.data.message);
     });
   };
   let errorCount = 0;
@@ -54,7 +62,7 @@ const Contact = () => {
             ) : (
               ""
             )}
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} id="contactForm">
               <div className="form-container mt-3">
                 <input
                   type="text"
@@ -83,10 +91,7 @@ const Contact = () => {
                 ></textarea>
               </div>
               <div className="mt-3">
-                <ReCAPTCHA
-                  sitekey="6LdrgHgaAAAAALSBQ7cG71q1lpeHoTg73vQYR4cY"
-                  ref={recaptchaRef}
-                />
+                <ReCAPTCHA sitekey={recaptchaKey} ref={recaptchaRef} />
               </div>
               <button type="submit" className="btn btn-green mt-3 text-light  ">
                 Envoyer

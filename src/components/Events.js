@@ -44,40 +44,49 @@ const Events = () => {
       <div className="container">
         <div className="row">
           <h2 className="sectionTitle">LES ÉVÈNEMENTS</h2>
-          <div id="carousel">
-            {data.map((content, index) => (
-              <div key={index} className="carousel--block">
-                <div className="imageContainer">
-                  <img src={url + "img/" + content.image} alt={content.image} />
+          {data.length > 0 ? (
+            <div id="carousel">
+              {data.map((content, index) => (
+                <div key={index} className="carousel--block">
+                  <div className="imageContainer">
+                    <img
+                      src={url + "img/" + content.image}
+                      alt={content.image}
+                    />
+                  </div>
+                  <div className="carousel--title">
+                    <h4>{content.title}</h4>
+                  </div>
+                  <div className="iconForEvents">
+                    <img src="img/place.png" alt="here is the place to be" />
+                    {content.place}
+                  </div>
+                  <div className="iconForEvents">
+                    <img
+                      src="img/calendar.png"
+                      alt="here is the time to be"
+                      className="mx-1"
+                    />
+                    {dateFormat(content.startAt, "dd/mm/yy HH:MM")}-
+                    {dateFormat(content.endAt, "dd/mm/yy HH:MM")}
+                  </div>
+                  <div className="carousel--text">{content.description}</div>
+                  <a
+                    href={content.link}
+                    className="btn btn-green text-light mt-4 left"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    S'inscrire
+                  </a>
                 </div>
-                <div className="carousel--title">
-                  <h4>{content.title}</h4>
-                </div>
-                <div className="iconForEvents">
-                  <img src="img/place.png" alt="here is the place to be" />
-                  {content.place}
-                </div>
-                <div className="iconForEvents">
-                  <img
-                    src="img/calendar.png"
-                    alt="here is the time to be"
-                    className="mx-1"
-                  />
-                  {dateFormat(content.startAt, "dd/mm/yy HH:MM")}-
-                  {dateFormat(content.endAt, "dd/mm/yy HH:MM")}
-                </div>
-                <div className="carousel--text">{content.description}</div>
-                <a
-                  href={content.link}
-                  className="btn btn-green text-light mt-4 left"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  S'inscrire
-                </a>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <h5 className="mt-4 text-center">
+              Désolé, aucun évènement prévu actuellement
+            </h5>
+          )}
         </div>
       </div>
     </section>
