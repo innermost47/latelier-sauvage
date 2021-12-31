@@ -16,7 +16,6 @@
     "react-router-dom": "^6.2.1",
     "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.0",
-    "tarteaucitronjs": "^1.9.5",
     "web-vitals": "^2.1.2"
   },
   "scripts": {

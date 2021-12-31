@@ -11,21 +11,19 @@ const Whoami = () => {
   return (
     <section id="whoami">
       <div className="container">
-        <div className="row">
-          <h2 className="sectionTitle text-center">QUI SUIS-JE ?</h2>
-          {data.map((content, key) => (
-            <div className="row" key={key}>
-              <div className="col-md-6">
-                <div className="imageContainerWhoAmI">
-                  <img src={url + "img/" + content.image} alt="data.image" />
-                </div>
-              </div>
-              <div className="col-md-6">
-                <p>{content.description}</p>
+        <h2 className="sectionTitle text-center">QUI SUIS-JE ?</h2>
+        {data.map((content, key) => (
+          <div className="row" key={key}>
+            <div className="col-md-6">
+              <div className="imageContainerWhoAmI">
+                <img src={url + "img/" + content.image} alt="data.image" />
               </div>
             </div>
-          ))}
-        </div>
+            <div className="col-md-6">
+              <p>{content.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
