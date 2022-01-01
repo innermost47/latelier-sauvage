@@ -4,14 +4,23 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { url } from "../js/Constantes";
 import Navigation from "../components/Navigation";
+import { useNavigate } from "react-router-dom";
 
 const Activities = () => {
   window.scrollTo(0, 0);
   let id = useParams();
   id = id.activiteId;
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
+  const redirect = () => navigate("*");
   useEffect(() => {
-    axios.get(`${url}activities/${id}`).then((res) => setData(res.data));
+    axios.get(`${url}activities/${id}`).then((res) => {
+      if (res.data === null) {
+        redirect();
+      } else {
+        setData(res.data);
+      }
+    });
   }, []);
   return (
     <div>

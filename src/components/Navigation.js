@@ -1,7 +1,12 @@
 import { HashLink as Link } from "react-router-hash-link";
 import "../style/navigation.css";
+import Auth from "../js/Auth";
 
 const Navigation = () => {
+  const logout = () => {
+    Auth.logout();
+    localStorage.removeItem("token");
+  };
   return (
     <div className="navigation">
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -49,6 +54,15 @@ const Navigation = () => {
                   Contact
                 </Link>
               </li>
+              {Auth.isAuthenticated() ? (
+                <li className="nav-item">
+                  <Link to="/" className="nav-link" onClick={logout}>
+                    Déconnexion
+                  </Link>
+                </li>
+              ) : (
+                ""
+              )}
             </ul>
           </div>
         </div>
