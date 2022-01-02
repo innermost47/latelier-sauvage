@@ -7,6 +7,7 @@ import CookieConsent from "react-cookie-consent";
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Back from "./pages/Back";
+import Update from "./pages/Update";
 
 const App = () => {
   return (
@@ -21,6 +22,15 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <Back />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            exact
+            path="/update/:id"
+            element={
+              <ProtectedRoute>
+                <Update />
               </ProtectedRoute>
             }
           />
