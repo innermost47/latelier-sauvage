@@ -56,6 +56,15 @@ const Navigation = () => {
               </li>
               {Auth.isAuthenticated() ? (
                 <li className="nav-item">
+                  <Link to="/back" className="nav-link">
+                    Back
+                  </Link>
+                </li>
+              ) : (
+                ""
+              )}
+              {Auth.isAuthenticated() ? (
+                <li className="nav-item">
                   <Link to="/" className="nav-link" onClick={logout}>
                     Déconnexion
                   </Link>
