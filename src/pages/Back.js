@@ -8,6 +8,7 @@ import "../style/back.css";
 import dateFormat from "dateformat";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import UpdateWhoAmI from "../components/UpdateWhoAmI";
 
 const Back = () => {
   window.scrollTo(0, 0);
@@ -230,6 +231,7 @@ const Back = () => {
               Créer
             </button>
           </form>
+          <UpdateWhoAmI />
         </div>
       </div>
       <Footer />
