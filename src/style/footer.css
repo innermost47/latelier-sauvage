@@ -16,6 +16,22 @@
   margin: auto;
 }
 
+.mentionsLink {
+  background-color: black;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.linkMentions {
+  text-decoration: none;
+  color: #fff;
+}
+
+.linkMentions:hover {
+  color: #fff;
+  font-weight: bold;
+}
+
 @media screen and (min-width: 500px) {
   .footerLogo {
     width: 450px;

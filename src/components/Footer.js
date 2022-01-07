@@ -1,4 +1,5 @@
 import "../style/footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -19,6 +20,11 @@ const Footer = () => {
       </div>
       <div className="footerInfos">
         <img src="/img/logo.png" alt="The Logo" className="footerLogo" />
+      </div>
+      <div className="mentionsLink">
+        <Link to="/mentions-legales" className="linkMentions">
+          Mentions legales
+        </Link>
       </div>
     </footer>
   );

@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Back from "./pages/Back";
 import Update from "./pages/Update";
+import Mentions from "./pages/Mentions";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/mentions-legales" element={<Mentions />} />
           <Route exact path="/login" element={<Login />} />
           <Route
             exact
