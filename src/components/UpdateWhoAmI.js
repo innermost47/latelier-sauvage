@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { url } from "../js/Constantes";
 import { useForm } from "react-hook-form";
 import { decode } from "html-entities";
+import { api } from "../js/Constantes";
 
 const UpdateWhoAmI = () => {
   const [data, setData] = useState({ id: "", image: "", description: "" });
@@ -62,7 +63,7 @@ const UpdateWhoAmI = () => {
         ></div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Editor
-            apiKey="5x35t8ocvnbcudz7sicedvjklwec9hxb9jghq3ukw72wxpui"
+            apiKey={api}
             initialValue={"<p>" + data.description + "</p>"}
             init={{
               plugins: "link image code",
