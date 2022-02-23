@@ -26,6 +26,12 @@ const Mentions = () => {
             PlanetHoster 4416 Louis B. Mayer Laval (Grand Montréal), Québec H7P
             0G1 Canada FR:+33 1 76 60 41 43
           </p>
+          <hr />
+          <h3 className="mt-3">Politique de confidentialité</h3>
+          <iframe
+            style={{ border: 0, height: 200, width: "100%" }}
+            src="https://matomo.anthony-charretier.fr/index.php?module=CoreAdminHome&action=optOut&language=fr&backgroundColor=&fontColor=&fontSize=&fontFamily="
+          ></iframe>
         </div>
       </div>
       <Footer />
