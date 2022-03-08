@@ -1,5 +1,4 @@
 import "../style/contact.css";
-import ReCAPTCHA from "react-google-recaptcha";
 import { url } from "../js/Constantes";
 import axios from "axios";
 import { useForm } from "react-hook-form";
@@ -91,9 +90,9 @@ const Contact = () => {
                 ></textarea>
               </div>
               <div className="mt-3">
-                <ReCAPTCHA sitekey={recaptchaKey} ref={recaptchaRef} />
+                <div className="g-recaptcha" data-sitekey={recaptchaKey}></div>
               </div>
-              <button type="submit" className="btn btn-green mt-3 text-light  ">
+              <button type="submit" className="btn btn-green text-light  ">
                 Envoyer
               </button>
             </form>

@@ -3,7 +3,6 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Activities from "./pages/Activities";
 import "./style/index.css";
-import CookieConsent from "react-cookie-consent";
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Back from "./pages/Back";
@@ -40,23 +39,6 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-      <CookieConsent
-        style={{ background: "#101010" }}
-        buttonStyle={{
-          background: "#96A24E",
-          color: "#FFF",
-          fontSize: "13px",
-        }}
-        expires={150}
-        enableDeclineButton
-        declineButtonStyle={{
-          color: "#FFF",
-          fontSize: "13px",
-        }}
-      >
-        This website uses cookies to ensure you get the best experience on our
-        website.
-      </CookieConsent>
     </div>
   );
 };
